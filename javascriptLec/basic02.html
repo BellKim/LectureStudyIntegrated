@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script type="text/javascript">
+
+
+        /* 함수
+            function 함수명([인자, 인자, 인자....]){
+                
+            }
+        */
+
+        //다양한 함수 호출방식
+        numbering = function(){
+            console.log();
+        }
+
+
+        //익명함수 : 정의된 함수를 괄호로 묶고 호출할때 쓰는 기호 (); 를 바로 호출하는것.
+        (function(){
+            console.log();
+        })();
+        //정의와 호출을 동시에 하는것이다. 
+
+
+
+        /* 배열 
+            연관된 데이터를 통으로 모아서 관리하기 위해서 사용하는 데이터 타입이다. 
+        */
+       var member = ['hello1', 'hello2', 'hello3'];
+
+       console.log(member[0]); 
+       console.log(member[1]); 
+       console.log(member[2]); 
+
+
+
+       //배열의 효용
+        //예시 
+        function get_member1(){
+            return 'hello';            
+        }
+
+        document.write(get_member1());
+
+
+        function get_members(){
+            return ['hello1', 'hello2', 'hello3'];
+        }
+        var members11 = get_memgers();
+        document.write(members11[0]);
+        document.write(members11[1]);
+        document.write(members11[2]);
+
+
+
+
+
+
+        //배열을사용하는 구체적인 방안. 
+        function get_members(){
+            return ['helloworld', 'k8805', 'songsari123'];
+        }
+        members = get_members();
+        // members.length는 배열에 담긴 값의 숫자를 알려준다. 
+        for(i = 0; i < members.length; i++){
+            // members[i].toUpperCase()는 members[i]에 담긴 문자를 대문자로 변환해준다.
+            document.write(members[i].toUpperCase());   
+            document.write('<br />');
+        }
+
+        //배열의 추가 
+        var li = ['a','b','c','d','e','f','g','h'];
+
+        li.push('i');       //배열 데이터 추가. 
+
+        li = li.concat(['f', 'g']);  //인자로 주어진 배열이나 값들을 기존 배열에 합쳐서 새 배열을 반환.
+
+        li = li.unshift('z');       //값을 제일 앞에 추가해준다. 
+
+        li = li.splice();
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+    
+    </script>
+
+    
+</body>
+</html>
+
+
+
+
+
