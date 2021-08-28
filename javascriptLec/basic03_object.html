@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script type="text/javascript">
+
+        /*
+            객체선언
+        */
+
+        var grades = {};
+        grades['test1'] = 10;
+        grades['test2'] = 20;
+        grades['test3'] = 30;
+
+        // 객체 값 불러오기
+        grades['test1'] 
+        //결과 : 10 출력됨. 
+        grades.test1
+        //결과 : 10출력됨. 
+
+
+        /*
+            객체선언 두번째 
+        */
+
+        var grades2 = new Object();
+        grades2['test1'] = 10;
+        grades2['test2'] = 20;
+        grades2['test3'] = 30;
+
+
+        /*
+            객체와 반복문
+        */
+
+        var arr = ['a', 'b', 'c'];
+
+
+        for(var i=0; i<arr.length; i++){
+            console.log(arr[i]);
+        }
+
+        //key value 의 값 반복문으로 출력하기. 
+
+        var grades = {};
+
+        grades['test1'] = 10;
+        grades['test2'] = 20;
+        grades['test3'] = 30;
+
+        for(key in grades){
+            document.write("key : "+key+" value : "+grades[key]+"<br />");
+        }
+
+        
+
+
+        /*
+            객체지향 프로그래밍 .
+        */
+
+
+        var gradesObject = {
+            'list': {
+                'test1' : 10,
+                'test2' : 20,
+                'test3' : 30,
+                'test4' : 40,
+            },
+            'show' : function(){
+                console.log(this.list.test1);   //이 객체가 가지고있는 list를 불러온다. 
+
+                for(var name in this.list){
+                    console.log(name, this.list[name]);     //콤마를 통해서 여러개의 값을 출력해줄수있다. 
+                }
+                
+            }
+        };
+
+        console.log(gradesObject.list.test3);
+        //결과 : 30;
+
+        //객체 속에 있는 메소드를 콜하는 방법
+        gradesObject['show']();
+        gradesObject.show();    //두가지 모두 같은방법이다. 
+        
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+    
+    </script>
+
+    
+</body>
+</html>
+
+
+
+
+
