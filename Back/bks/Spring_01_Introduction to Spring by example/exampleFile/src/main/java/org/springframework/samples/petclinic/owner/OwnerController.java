@@ -20,6 +20,7 @@ import java.util.Map;
 
 import javax.validation.Valid;
 
+import org.springframework.context.ApplicationContext;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -28,11 +29,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.InitBinder;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 /**
@@ -50,14 +47,33 @@ class OwnerController {
 
 	private final VisitRepository visits;
 
-	public OwnerController(OwnerRepository clinicService, VisitRepository visits) {
+	private final ApplicationContext applicationContext;
+
+
+	public OwnerController(OwnerRepository clinicService, VisitRepository visits, ApplicationContext applicationContext) {
 		this.owners = clinicService;
 		this.visits = visits;
+		this.applicationContext = applicationContext;
 	}
 
 	@InitBinder
 	public void setAllowedFields(WebDataBinder dataBinder) {
 		dataBinder.setDisallowedFields("id");
+	}
+
+
+	@GetMapping("/bean")
+	@ResponseBody
+	public String bean(){
+		//IOC 컨테이너에서 가지고온 해쉬값과 컨트롤러 내부에서 가지고온owner 해쉬값이 서로 같다.
+		//즉 재생성되지 않고 외부에서 주입해준 방식의 객체라는것을 알 수 있다.
+		return "bean : " + applicationContext.getBean(OwnerRepository.class)
+			+ "\n owners :  = " + this.owners;
+
+		/*
+		bean : org.springframework.data.jpa.repository.support.SimpleJpaRepository@70b846e3
+		owners : = org.springframework.data.jpa.repository.support.SimpleJpaRepository@70b846e3
+		 */
 	}
 
 	@GetMapping("/owners/new")
