@@ -6,7 +6,17 @@
 </head>
 <body>
 <h1> This area is static contents area. </h1>
-    If you contect this page, plese type like this:::
-    :::: http://localhost:[yourport]/hello-static.thml
+    <pre>
+        If you contect this page, plese type like this:::
+        :::: http://localhost:[yourport]/hello-static.thml
+    </pre>
+
 </body>
 </html>
+
+<!--
+웹브라우저 -> 내장 톰캣서버    -> 우선순위 1. 스프링컨테이너에서 찾는다.(없으면 static폴더에서 찾는다.)
+                         -> static퐃더에서 찾는다.
+
+
+-->
