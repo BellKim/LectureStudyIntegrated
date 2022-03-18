@@ -3,6 +3,7 @@ package hello.hellospring.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.ArrayList;
 
@@ -19,4 +20,17 @@ public class HelloController {
         //찾으면 viewResolver가 화면처리를 해준다.
         return "hello";
     }
+
+    //http://localhost:8089/hello-mvc
+    @GetMapping("hello-mvc")
+    public String helloMvc(@RequestParam(value = "name", required = false) String name, Model model){
+
+        System.out.println("naem print = " + name);
+
+        model.addAttribute("name", name);
+
+        return "hello-template";
+    }
+
+
 }
