@@ -32,5 +32,11 @@ public class HelloController {
         return "hello-template";
     }
 
+    /*
+        포트로 요청  -> 내장톰캣서버 ->  스프링 컨테이너에서 mapping리스트 에서 해당 매핑값 조회
+         ->  viewResolver에서 templates 폴더의 html파일을 찾아서 타임리프 템플릿 엔진처리시작(웹페이지에서 표현될수있도록 html 형태로)
+         웹브라우저에서 출력 
+     */
+
 
 }
