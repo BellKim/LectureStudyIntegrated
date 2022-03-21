@@ -4,6 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.ArrayList;
 
@@ -37,6 +38,39 @@ public class HelloController {
          ->  viewResolver에서 templates 폴더의 html파일을 찾아서 타임리프 템플릿 엔진처리시작(웹페이지에서 표현될수있도록 html 형태로)
          웹브라우저에서 출력 
      */
+
+    @GetMapping("hello-string")
+    @ResponseBody
+    public String helloString(@RequestParam("name") String name){
+
+        return  "hello " +  name;
+    }
+
+    @GetMapping("hello-api")
+    @ResponseBody
+    public Hello helloApi(@RequestParam("name") String name){
+        Hello hello = new Hello();
+        hello.setName(name);
+        return hello;
+    }
+
+
+
+    /*
+    Getter Setter 자동생성 : mac: cmd+n Win:ctrl+n 에서 getter, setter 클릭후 생성할 변수 선택후 ok
+     */
+    static class Hello{
+
+        private String name;
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+    }
 
 
 }
