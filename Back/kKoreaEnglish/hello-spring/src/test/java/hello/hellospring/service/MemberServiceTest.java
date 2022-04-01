@@ -15,10 +15,6 @@ class MemberServiceTest {
     void join() {
         //테스트코드의 기본순서패턴
         //given
-        //when
-        //then
-
-        //given
         Member member = new Member();
         member.setName("hello");
 
