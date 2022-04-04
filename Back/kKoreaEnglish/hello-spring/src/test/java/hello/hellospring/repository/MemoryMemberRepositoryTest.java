@@ -13,6 +13,7 @@ class MemoryMemberRepositoryTest {
     MemoryMemberRepository repository = new MemoryMemberRepository();
 
 
+    //테스트 메소드가 끝날때마다 afterEach메소드를 실행하게 하도록한다. (테스트를 실행할때마다 내용을 싹다지운다.(clear Stroe.))
     @AfterEach
     public void afterEach(){
         repository.clearStore();
@@ -32,26 +33,23 @@ class MemoryMemberRepositoryTest {
 
         Member result = repository.findById(member.getId()).get();
         assertEquals(result, member);
-        System.out.println("aaaa");
         assertThat(member).isEqualTo(result);
-        System.out.println("bbbb");
-//        assertThat(member).isEqualTo(result);
     }
 
     @Test
     public void findByName(){
-        System.out.println("b");
+
         Member member1 = new Member();
         member1.setName("spring1");
         repository.save(member1);
 
         Member member2 = new Member();
-        member2.setName("spring1");
+        member2.setName("spring2");
         repository.save(member2);
 
-        Member result = repository.findByName("spring1").get();
+        Member result = repository.findByName("spring2").get();
 
-        assertThat(result).isEqualTo(member1);
+        assertThat(result).isEqualTo(member2);
     }
 
     @Test
