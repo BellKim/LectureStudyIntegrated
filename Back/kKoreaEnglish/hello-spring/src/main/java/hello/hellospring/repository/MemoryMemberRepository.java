@@ -4,11 +4,10 @@ import hello.hellospring.domain.Member;
 
 import java.util.*;
 
-public class MemoryMemberRepository implements MemberRepository{
+public class MemoryMemberRepository implements MemberRepository {
 
     private static Map<Long, Member> store = new HashMap<>();
     private static long sequence = 0L;
-
 
     @Override
     public Member save(Member member) {
@@ -30,17 +29,20 @@ public class MemoryMemberRepository implements MemberRepository{
         return store.values().stream()
                 .filter(member -> member.getName().equals(name))
                 .findAny();
+
+        //  member.getname 이 넘어온 name 과 같은지 필터링한다. 찾으면 반환을 한다.
+
     }
 
     @Override
     public List<Member> findAll() {
+        // 리스트 전체를 반환한다.
         return new ArrayList<>(store.values());
     }
 
-    public void clearStore(){
+    public void clearStore() {
+
         store.clear();
     }
-
-
 
 }
