@@ -12,7 +12,11 @@ public class MemberController {
 
     @Autowired  //외부에서 데이터를 넣어주는것 << DI
     public MemberController(MemberService memberService) {
+
         this.memberService = memberService;
     }
+
+
+
 
 }//end of class
