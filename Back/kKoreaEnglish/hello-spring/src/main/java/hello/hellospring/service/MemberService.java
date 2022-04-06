@@ -9,7 +9,6 @@ import java.util.List;
 import java.util.Optional;
 
 //서비스를 만들어두고 테스트 파일을 바로 만들고자 할때 :: CMD + T 로 바로 만들수 있다.
-@Service
 public class MemberService {
 
     //    private final MemberRepository memberRepository = new MemoryMemberRepository();
