@@ -13,9 +13,9 @@ public class HelloController {
 
 
     @GetMapping("hello")
-    public String hello(Model model){
+    public String hello(Model model) {
         //웹페이지에서의 데이터 변수:data, 값:hello
-      model.addAttribute("data", "hello!!!!!");
+        model.addAttribute("data", "hello!!!!!");
 
         // return 에서는 resources/templates/hello.html을 템플릿엔진이 찾는다.
         //찾으면 viewResolver가 화면처리를 해준다.
@@ -24,7 +24,7 @@ public class HelloController {
 
     //http://localhost:8089/hello-mvc
     @GetMapping("hello-mvc")
-    public String helloMvc(@RequestParam(value = "name", required = false) String name, Model model){
+    public String helloMvc(@RequestParam(value = "name", required = false) String name, Model model) {
 
         System.out.println("naem print = " + name);
 
@@ -41,25 +41,24 @@ public class HelloController {
 
     @GetMapping("hello-string")
     @ResponseBody
-    public String helloString(@RequestParam("name") String name){
+    public String helloString(@RequestParam("name") String name) {
 
-        return  "hello " +  name;
+        return "hello " + name;
     }
 
     @GetMapping("hello-api")
     @ResponseBody
-    public Hello helloApi(@RequestParam("name") String name){
+    public Hello helloApi(@RequestParam("name") String name) {
         Hello hello = new Hello();
         hello.setName(name);
         return hello;
     }
 
 
-
     /*
     Getter Setter 자동생성 : mac: cmd+n Win:ctrl+n 에서 getter, setter 클릭후 생성할 변수 선택후 ok
      */
-    static class Hello{
+    static class Hello {
 
         private String name;
 
