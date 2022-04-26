@@ -13,12 +13,12 @@ public class SpringConfig {
     //이런 식으로 작성해주면 @autowired 를 해주지 않아도 된다.
 
     @Bean
-    public MemberService memberService(){
+    public MemberService memberService() {
         return new MemberService(memberRepository());
     }
 
     @Bean
-    public MemberRepository memberRepository(){
+    public MemberRepository memberRepository() {
         return new MemoryMemberRepository();
     }
 
