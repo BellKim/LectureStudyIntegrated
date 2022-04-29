@@ -1,0 +1,22 @@
+DNS(domain name server)
+도메인을 등록을하면 DNS서버에서 도메인과 메칭된 IP를 응답해준다. 
+
+URI, 웹 브라우저 요청.
+URI(Uniform Resource Identifier)
+URL(uniform Resource Locator) 리소스가 있는 위치를 지정 (로케이터) www.naver.com/search?test=1&test=2
+URN(uniform Resource Name) : 리소스에 이름을 부여한다 (이름)
+
+URI URL URN
+URI는 로케이터(Locator), 이름(name) 또는 둘다 추가로 분류될 수 있다. 
+
+<< 각 명칭의 범주  >>
+URI [  {URL} {URN}    ] 
+
+
+
+
+
+
+
+
+
